@@ -2,7 +2,7 @@
 import PackageDescription
 
 let tag = "1.0.0"                // <-- change if necessary
-let base = "https://raw.githubusercontent.com/dmaulikr/MintoakBinarySDKs/\(tag)/Binaries"
+let base = "https://github.com/dmaulikr/MintoakBinarySDKs/blob/main/Binaries"
 
 let package = Package(
     name: "MintoakBinarySDKs",
