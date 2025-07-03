@@ -1,0 +1,51 @@
+name: Swift-Package-CI
+
+on:
+  pull_request:      # run on every PR
+  push:              # …and on every push to any branch
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-13          # macOS 13 = Xcode 15.x (you can switch to macos-14 for Xcode 15.4+)
+
+    # Pick the exact Xcode you need; see https://github.com/actions/setup-xcode#available-xcode-versions
+    steps:
+    - name: Select Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: "15.3"
+
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    # Because this is a binary-only package, we just need to resolve & build.
+    - name: Resolve SPM dependencies
+      run: swift package resolve
+
+    - name: Build package products
+      run: swift build -v
+
+    # optional – ensure Package.swift parses with older Swift toolchains (e.g. 5.8 / 5.9)
+    # matrix can be added here if you need multiple Swift versions
+
+  # ✨  OPTIONAL: verify that every zip’s checksum matches the one in Package.swift
+  checksum-audit:
+    needs: build
+    runs-on: macos-13
+    steps:
+    - uses: actions/checkout@v4
+    - name: Audit binary checksums
+      run: |
+        tmp=$(mktemp -d)
+        swift package dump-package | jq -r '.targets[] | select(.type=="binary") | "\(.name) \(.url) \(.checksum)"' | \
+        while read name url checksum ; do
+          file="$tmp/$(basename "$url")"
+          curl -sSL "$url" -o "$file"
+          actual=$(swift package compute-checksum "$file")
+          if [ "$actual" != "$checksum" ]; then
+            echo "❌  Checksum mismatch for $name: $actual (expected $checksum)"
+            exit 1
+          fi
+          echo "✅  $name checksum OK"
+        done
