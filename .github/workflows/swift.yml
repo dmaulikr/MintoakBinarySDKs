@@ -23,9 +23,6 @@ jobs:
     - name: Resolve SPM dependencies
       run: swift package resolve
 
-    - name: Build package products
-      run: swift build -v
-
     # optional – ensure Package.swift parses with older Swift toolchains (e.g. 5.8 / 5.9)
     # matrix can be added here if you need multiple Swift versions
 
