@@ -19,8 +19,37 @@ let package = Package(
                       "Localizable",
                       "Appearance"]),       // transitively needed
         .library(
-            name: "Appearance",
-            targets: ["Appearance"])
+            name: "AIMSalesSDK",
+            targets: ["AIMSalesSDK",
+                     "Appearance",
+                     "CalendarFilter",
+                     "Localizable",
+                     "FilterSDK",
+                     "NetWorker",
+                      "DataReloadableVC",
+                      "BizViewFilter"
+                     ]),
+        .library(
+            name: "PaymentModesSDK",
+            targets: ["PaymentModesSDK",
+                     "Appearance",
+                     "CalendarFilter",
+                     "Localizable",
+                     "FilterSDK",
+                     "NetWorker",
+                      "DataReloadableVC",
+                      "BizViewFilter"]),
+        .library(
+            name: "TransactionSDK",
+            targets: ["TransactionSDK",
+                     "Appearance",
+                     "CalendarFilter",
+                     "Localizable",
+                     "FilterSDK",
+                     "NetWorker",
+                      "DataReloadableVC",
+                      "BizViewFilter",
+                     "PayLaterCustomerListSDK"])
     ],
     targets: [
         // ---- Binary Targets ------------------------------------------------
@@ -58,6 +87,36 @@ let package = Package(
             name: "Localizable",
             url: "\(base)/Localizable.xcframework.zip",
             checksum: "8dcb0dfa90d8f275a611ed8775ca324ff302f62263c5646d4513e832787b33b4"
+        ),
+        .binaryTarget(
+            name: "DataReloadableVC",
+            url: "\(base)/DataReloadableVC.xcframework.zip",
+            checksum: "822ec0537985f0bf05cd170ed6530347eb6ab48742a22260fbf1caa8975326b1"
+        ),
+        .binaryTarget(
+            name: "PayLaterCustomerListSDK",
+            url: "\(base)/PayLaterCustomerListSDK.xcframework.zip",
+            checksum: "de30317ceba3e5ef26fea555ec05befa065699fb9557f3911b3af49b3bb9389e"
+        ),
+        .binaryTarget(
+            name: "PaymentModesSDK",
+            url: "\(base)/PaymentModesSDK.xcframework.zip",
+            checksum: "96ea134ee380170913d9861a35ffced21b90a761e322f7845e5e5642b503e495"
+        ),
+        .binaryTarget(
+            name: "Public",
+            url: "\(base)/Public.xcframework.zip",
+            checksum: "9d7c324f7124ab7f20effadcb2f7feba291cde5b0d584ce98766a45e6bc31282"
+        ),
+        .binaryTarget(
+            name: "TransactionSDK",
+            url: "\(base)/TransactionSDK.xcframework.zip",
+            checksum: "59cbb5ceaedcf3dc077c3d4e382a6cfb930b25a1e27b628d182b5c666fa7adcb"
+        ),
+        .binaryTarget(
+            name: "AIMSalesSDK",
+            url: "\(base)/AIMSalesSDK.xcframework.zip",
+            checksum: "07a825b4341fe628951457983709770ff9a69c1e690ff9a64e3192bc9ffd5278"
         )
     ]
 )
