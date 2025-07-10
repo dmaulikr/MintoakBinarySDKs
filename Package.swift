@@ -76,7 +76,7 @@ let package = Package(
         .binaryTarget(
             name: "CryptoSwift",
             url: "\(base)/CryptoSwift.xcframework.zip",
-            checksum: "b745bbe52f6e569b2d838552ce6136de1a52194bcdcf2547489ee63ca8b44d0a"
+            checksum: "9d0adb7e093dba5bbdd3bfea150c50a9dceaf114981a236bb7fd4b227178b77e"
         ),
         .binaryTarget(
             name: "CalendarFilter",
