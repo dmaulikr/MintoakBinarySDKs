@@ -56,22 +56,22 @@ let package = Package(
         .binaryTarget(
             name: "UamSDK",
             url: "\(base)/UamSDK.xcframework.zip",
-            checksum: "d1c2e8896cce9422641d510b898c3ecf5eec8be4612d53ca60d38599911a52d5"
+            checksum: "eaaf3ac5ec15981950b606664212236c24bf4b92dfc809d431375f68a4ec7bcf"
         ),
         .binaryTarget(
             name: "Appearance",
             url: "\(base)/Appearance.xcframework.zip",
-            checksum: "70250b9e787b33dad25cb2084547ba4ecf208e6538efdc0a0afc3eb422295e6d"
+            checksum: "d63f480ec4aa20e06d7456762f7767c7ae1e77dd7564e2e93fb90921d9284065"
         ),
         .binaryTarget(
             name: "NetWorker",
             url: "\(base)/NetWorker.xcframework.zip",
-            checksum: "32b6c69fc649ca08630450364f520e73a53767bd4acad34db46e3523cd696a15"
+            checksum: "70041ef472eb346a8415947a26e0c774766bbbdacff174a38f20978201b5b8bd"
         ),
         .binaryTarget(
             name: "FilterSDK",
             url: "\(base)/FilterSDK.xcframework.zip",
-            checksum: "262b286c2ec04e720ec930184ab78619d6b13701fc5c38af77d7950fb4404289"
+            checksum: "f1302fee164e6dbb1b970bcc6fdf164af0288bf3c2197da35fd79735f7756793"
         ),
         .binaryTarget(
             name: "CryptoSwift",
@@ -81,12 +81,12 @@ let package = Package(
         .binaryTarget(
             name: "CalendarFilter",
             url: "\(base)/CalendarFilter.xcframework.zip",
-            checksum: "8cd22e17f82f67eab62d102e035a1c2cf99874e9d639433e56a7100759c7fc44"
+            checksum: "fb49618e9f50990ba975b7510403012f2332c50d27437da965e31183e50d7b72"
         ),
         .binaryTarget(
             name: "Localizable",
             url: "\(base)/Localizable.xcframework.zip",
-            checksum: "8dcb0dfa90d8f275a611ed8775ca324ff302f62263c5646d4513e832787b33b4"
+            checksum: "f2453b074aca0204aebd5004a1f67873ebfe6e24dc08e82cf11a960869cbdc83"
         ),
         .binaryTarget(
             name: "DataReloadableVC",
