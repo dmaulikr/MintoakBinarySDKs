@@ -117,6 +117,11 @@ let package = Package(
             name: "AIMSalesSDK",
             url: "\(base)/AIMSalesSDK.xcframework.zip",
             checksum: "07a825b4341fe628951457983709770ff9a69c1e690ff9a64e3192bc9ffd5278"
+        ),
+        .binaryTarget(
+            name: "BizViewFilter",
+            url: "\(base)/BizViewFilter.xcframework.zip",
+            checksum: "8e0e972d7ce83c046892a91e5da438e55b2ecb9786865e45ad0aff40648dd63b"
         )
     ]
 )
