@@ -17,7 +17,8 @@ let package = Package(
                       "CryptoSwift",
                       "CalendarFilter",
                       "Localizable",
-                      "Appearance"]),       // transitively needed
+                      "Appearance",
+                     "SharedSPM"]),       // transitively needed
         .library(
             name: "AIMSalesSDK",
             targets: ["AIMSalesSDK",
@@ -27,7 +28,8 @@ let package = Package(
                      "FilterSDK",
                      "NetWorker",
                       "DataReloadableVC",
-                      "BizViewFilter"
+                      "BizViewFilter",
+                      "SharedSPM"
                      ]),
         .library(
             name: "PaymentModesSDK",
@@ -38,7 +40,9 @@ let package = Package(
                      "FilterSDK",
                      "NetWorker",
                       "DataReloadableVC",
-                      "BizViewFilter"]),
+                      "BizViewFilter", 
+                      "SharedSPM"
+                     ]),
         .library(
             name: "TransactionSDK",
             targets: ["TransactionSDK",
@@ -49,7 +53,8 @@ let package = Package(
                      "NetWorker",
                       "DataReloadableVC",
                       "BizViewFilter",
-                     "PayLaterCustomerListSDK"])
+                     "PayLaterCustomerListSDK",
+                     "SharedSPM"])
     ],
     targets: [
         // ---- Binary Targets ------------------------------------------------
@@ -122,6 +127,11 @@ let package = Package(
             name: "BizViewFilter",
             url: "\(base)/BizViewFilter.xcframework.zip",
             checksum: "8e0e972d7ce83c046892a91e5da438e55b2ecb9786865e45ad0aff40648dd63b"
+        ),
+        .binaryTarget(
+            name: "SharedSPM",
+            url: "\(base)/SharedSPM.xcframework.zip",
+            checksum: "bfd28a7867a916bbc8b5a883283dca4b9b8ce35c4ade519af3195b27bd3e0536"
         )
     ]
 )
